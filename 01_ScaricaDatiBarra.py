@@ -1,26 +1,20 @@
-
 from zeep import Client
+from sys import argv
+from Modules.config import Config
 
-USER = "mbrazzelli"
-CLIENTID = "q4b33vhnbs"
-PW = "Barra2018"
-
-
-client = Client('./bdti.wsdl')
-login = client.service.Login(USER, CLIENTID, PW)
+my_path = argv[0]
+my_root_folder = my_path.split("01_ScaricaDatiBarra.py")[0]
+config_path = my_root_folder+"\Config.toml"
+config = Config(config_path)
+wsdl_path = my_root_folder+"\\Resources\\bdt.wsdl"
+client = Client(wsdl_path)
+#login = client.service.Login(config.user, config.clientid, config.password)
 #FilterType = client.get_type("ns0:FilterType")
 #help(FilterType)
 #filterType = FilterType("PortfolioTree")
 #myFilters = client.service.GetFilters(filterType)
 #print(myFilters)
-
-
-import os
-import pandas as pd
-
-workfolder = os.getcwd()
-path = workfolder + "\Proposta_Portafoglio.xlsx"
-
-df = pd.read_excel(path, sheetname="Foglio1")
-
-print(df)
+PortfolioTree = client.get_type("ns0:PortfolioTree")
+myPftree = PortfolioTree()
+myPftree.TreeName = "defaultExportSetTree"
+print(myPftree)

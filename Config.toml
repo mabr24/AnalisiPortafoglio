@@ -2,6 +2,7 @@
 
 [barra_credentials]
 username = "mbrazzelli"
+clientid = "q4b33vhnbs"
 password = "Barra2018"
 
 [barra_config]
@@ -11,6 +12,10 @@ names = "Ptf_Mediobanca"
 date = "20040930"
 
 [parametri_portafoglio]
-nome = "test"
+nome_portafoglio = "test"
 data_analisi = "02/12/2018"
 valuta = "Euro"
+
+[barra_exportsets]
+stress_hist = true
+stress_small = true
