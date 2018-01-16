@@ -1,0 +1,11 @@
+# This is a TOML document.
+
+[barra_credentials]
+owner = "mbrazzelli"
+names = "Ptf_Mediobanca"
+date = "20040930"
+
+[parametri_portafoglio]
+nome = "test"
+data_analisi = "02/12/2018"
+valuta = "Euro"
