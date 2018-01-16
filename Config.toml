@@ -1,6 +1,11 @@
 # This is a TOML document.
 
 [barra_credentials]
+username = "mbrazzelli"
+password = "Barra2018"
+
+[barra_config]
+dataconnect_path = "C:\\Program Files (x86)/MSCI\\DataConnect Client Tool\\3.5\\UploadUserData.exe"
 owner = "mbrazzelli"
 names = "Ptf_Mediobanca"
 date = "20040930"
